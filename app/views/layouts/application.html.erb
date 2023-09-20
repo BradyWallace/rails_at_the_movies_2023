@@ -18,5 +18,10 @@
     </div>
     <%= yield %>
   </section>
+  <% if controller_name == 'home' %>
+    <p class="pl-5">There is no place like home 🏠</p>
+  <% else %>
+    <%= render partial: 'layouts/components/footer'%>
+  <% end %>
   </body>
 </html>
