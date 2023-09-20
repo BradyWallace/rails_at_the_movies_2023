@@ -2,6 +2,7 @@ require "csv"
 
 Movie.delete_all
 ProductionCompany.delete_all
+Page.delete_all
 
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='production_companies';")
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='movies';")
@@ -36,3 +37,14 @@ end
 
 puts "Created #{ProductionCompany.count} Production Companies."
 puts "Created #{Movie.count} Movies."
+
+Page.create(
+  title:     "About The Data",
+  content:   "The data that powers this website is bullshit and untrustworthy. It was provided by IMDB Kaggle, though.",
+  permalink: "about_the_data"
+)
+Page.create(
+  title:     "Contact Us",
+  content:   "If you like this website please reach out to fakeass@fakeshit.com",
+  permalink: "contact"
+)
