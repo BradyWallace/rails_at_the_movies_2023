@@ -4,7 +4,7 @@
     <ol class="ml-5">
       <% @movies.each do |movie| %>
         <li>
-          <%= link_to movie.title, movie %> <em><%= movie.production_company.name %></em>
+          <%= link_to movie.title, movie %> <em>(<%= movie.production_company.name %>)</em>
         </li>
       <% end %>
     </ol>
@@ -31,3 +31,5 @@
     </p>
   </div>
 </div>
+
+<%= render 'layouts/components/footer' %>
