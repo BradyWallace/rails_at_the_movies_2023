@@ -1,0 +1,32 @@
+<%= form_with(model: page) do |form| %>
+  <% if page.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+        <% page.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class: "input" %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content, class: "textarea" %>
+  </div>
+
+  <div>
+    <%= form.label :permalink, style: "display: block" %>
+    <%= form.text_field :permalink, class: "input" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "button is-primary mt-5" %>
+  </div>
+<% end %>
